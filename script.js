@@ -7,7 +7,13 @@ function color(e){
     this.classList.add("hovered");
 }
 function givePrompt(e){
-    let rows = prompt("How many squares would you like per row and column?");
+    let rows = -1;
+    let type = false;
+    while (rows < 0 || rows > 100 || !type){
+        rows = prompt("How many squares would you like per row and column?");
+        type = /^\d+$/.test(rows);
+        console.log(type);
+    }
     removeDivs();
     addDivs(rows);
 } //ADD INPUT VALIDATION
