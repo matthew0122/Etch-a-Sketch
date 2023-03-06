@@ -1,10 +1,36 @@
 let row = 16;
+let mode = "black-and-white";
 const amtChanger = document.getElementById("amount");
 amtChanger.addEventListener("click", givePrompt);
+
+const blackAndWhite = document.getElementById("black-and-white");
+blackAndWhite.addEventListener("click", changeMode);
+const colored = document.getElementById("colored");
+colored.addEventListener("click", changeMode);
+const shaded = document.getElementById("shaded");
+shaded.addEventListener("click", changeMode);
+
 addDivs(16);
 
 function color(e){
-    this.classList.add("hovered");
+    if(mode == "black-and-white"){
+        this.style.backgroundColor = "black";
+    }
+    else if(mode == "colored"){
+        this.style.backgroundColor = randomColor();
+    }
+}
+function randomColor(){
+    let ans = "#";
+    let options = "0123456789abcdef"
+    for (let i = 0; i < 6; i++){
+        let num = Math.round(Math.random()*15);
+        ans = ans + options[num];
+    }
+    return ans;
+}
+function changeMode(e){
+   mode = this.id;
 }
 function givePrompt(e){
     let rows = -1;
@@ -16,7 +42,7 @@ function givePrompt(e){
     }
     removeDivs();
     addDivs(rows);
-} //ADD INPUT VALIDATION
+}
 function removeDivs() {
     const row = document.getElementsByClassName("flexy");
     const row2 = Array.from(row);
