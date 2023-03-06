@@ -10,4 +10,5 @@
 }
 .hovered {
     background-color: black;
+    border: solid 1px gray;
 }
