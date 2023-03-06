@@ -19,6 +19,15 @@ function color(e){
     else if(mode == "colored"){
         this.style.backgroundColor = randomColor();
     }
+    else if (mode == "shaded"){
+        this.style.backgroundColor = "black";
+        if(this.style.opacity != ""){
+            this.style.opacity *= 2;
+        }
+        else{
+            this.style.opacity = 0.1;
+        }
+    }
 }
 function randomColor(){
     let ans = "#";
