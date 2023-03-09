@@ -20,6 +20,7 @@ function color(e){
     }
     else if(mode == "colored"){
         this.style.backgroundColor = randomColor();
+        this.style.opacity =1;
     }
     else if (mode == "shaded"){
         this.style.backgroundColor = "black";
