@@ -24,7 +24,10 @@ function color(e){
     }
     else if (mode == "shaded"){
         this.style.backgroundColor = "black";
-        if(this.style.opacity != ""){
+        if (this.style.opacity == 1){
+            this.style.opacity = 0.1;
+        }
+        else if(this.style.opacity != ""){
             this.style.opacity *= 2;
         }
         else{
