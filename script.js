@@ -9,6 +9,8 @@ const colored = document.getElementById("colored");
 colored.addEventListener("click", changeMode);
 const shaded = document.getElementById("shaded");
 shaded.addEventListener("click", changeMode);
+const clear = document.getElementById("clear");
+clear.addEventListener("click", clears);
 
 addDivs(16);
 
@@ -50,6 +52,7 @@ function givePrompt(e){
         console.log(type);
     }
     removeDivs();
+    row = rows;
     addDivs(rows);
 }
 function removeDivs() {
@@ -74,4 +77,8 @@ function addDivs(rows){
         }
         document.body.append(flex);
     }
+}
+function clears(){
+    removeDivs();
+    addDivs(row);
 }
